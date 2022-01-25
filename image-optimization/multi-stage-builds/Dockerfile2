@@ -1,8 +1,11 @@
-FROM node:16 as base
-COPY . .
+FROM node:16 as build
+
+WORKDIR /app
+COPY package.json index.js env ./
 RUN npm install
+
 FROM node:alpine as main
-COPY --from=base node_modules ./node_modules
-COPY --from=base index.js .
-COPY --from=base package.json .
-COPY --from=base env .
+
+COPY --from=build /app /
+EXPOSE 8080
+CMD ["index.js"]
