@@ -1,6 +1,6 @@
 # Docker Best Practices
 
-This repo contians information about best pracrices and optmizations techniques for Docker images.
+This repo contians information about best practices and optmizations techniques for Docker images.
 
 ## Documentations
 
